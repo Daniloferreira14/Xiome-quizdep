@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Título da Página</title>
+  <link rel="stylesheet" href="styles.css"> 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+      font-size: 17px;
+    }
+
+    .conteiner {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    .elementos-do-body {
+      position: relative;
+      width: 90%;
+      max-width: 600px;
+      background-color: #ddd;
+      margin-top: 60px; 
+      padding: 30px;
+      border-radius: 17px;
+      text-align: center;
+    }
+
+    .elementos-do-body img {
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      display: block;
+      margin: -10px  auto 0;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .botaos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .quiz-button {
+      width: 90%;
+      padding: 15px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: gray;
+      color: white;
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .quiz-button:hover {
+      background-color: #800000;
+    }
+
+    .confirmar {
+      background-color: gray;
+      cursor: not-allowed;
+    }
+
+    .confirmar.active {
+      background-color: #27ae60;
+      cursor: pointer;
+      color: white;
+    }
+    .elementos-do-body p{
+      margin-top: 30px;
+      font-size: 25px;
+    }
+.whatza-pp{
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  position: absolute;
+  left: 75%;
+  top: 18%;
+}
+.cardapio{
+  width: 60px;
+  height: 60px;
+  
+}
+.footer {
+  background-color: #222; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  text-align: center; /* Centraliza o conteúdo */
+  padding: 15px; /* Espaçamento interno */
+  position: fixed; /* Fixa no rodapé */
+  bottom: 0; /* Gruda no final da página */
+  width: 100%; /* Ocupa a largura toda */
+}
+.demostraçao{
+  font-size: 40px;
+}
+  </style>
+</head>
+<body>
+
+  <div class="conteiner">
+    <nav>
+      <h2>Spacter</h2>
+      <a href="https://wa.me/98992074581" target="_blank">
+        <img class="whatza-pp"width="60" height="40" src="https://img.icons8.com/3d-fluency/94/whatsapp.png" alt="whatsapp"/>
+        
+              </a>
+        <img  class="cardapio"width="50" height="50" src="https://img.icons8.com/ios/50/menu--v1.png" alt="menu--v1"/>
+
+    </nav>
+  </div>
+
+  <div class="elementos-do-body">
+    <img src="https://i.postimg.cc/6pWX0PB1/24acd163-5b2d-47ae-bc8a-0e757aa65fef.webp" alt="Imagem Quiz">
+    
+    <p>text</p>
+<br></br>
+    <div class="botaos">
+      <button class="quiz-button" onclick="selecionarBotao(this)">🔥 Iniciante</button>
+      <button class="quiz-button" onclick="selecionarBotao(this)">😏 Experiente</button>
+      <button class="quiz-button" onclick="selecionarBotao(this)">Opção 3</button>
+      <button class="quiz-button" onclick="selecionarBotao(this)">Opção 4</button>
+      <button id="confirmar" class="quiz-button confirmar" disabled>Confirmar Resposta</button>
+      
+      <h2 class="demostraçao">demostraçao</h2>
+    </div>
+  </div>
+  <footer class="footer">
+  <p>© 2025 Spacter. Todos os direitos reservados.</p>
+</footer>
+
+  <script>
+    function selecionarBotao(botaoClicado) {
+  document.querySelectorAll('.quiz-button').forEach(botao => {
+    botao.classList.remove('active');
+  });
+
+  botaoClicado.classList.add('active');
+
+  let botaoConfirmar = document.getElementById("confirmar");
+  botaoConfirmar.classList.add("active");
+  botaoConfirmar.removeAttribute("disabled");
+}
+
+// Redireciona ao clicar no botão "Confirmar"
+document.getElementById("confirmar").addEventListener("click", function() {
+  window.location.href = "HTML.html"; // Substitua pelo nome da sua página de destino
+});
+  </script>
+
+</body>
+</html>
+
